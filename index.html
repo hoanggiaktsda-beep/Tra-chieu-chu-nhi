@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AICOMPLEX — PROMPT NỘI THẤT</title>
+<meta name="description" content="AI Interior Prompt Studio — phân tích brief và tạo prompt hình ảnh nội thất chuyên nghiệp.">
+<style>
+:root{--bg:#0b0d10;--panel:#12161b;--panel2:#171c22;--line:#29313a;--text:#f2f4f6;--muted:#98a2ad;--gold:#d7b77a;--gold2:#f0d69d;--green:#7bd6ad}
+*{box-sizing:border-box}body{margin:0;background:radial-gradient(circle at 75% -10%,#283039 0,#0b0d10 38%);color:var(--text);font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}
+header{height:72px;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;padding:0 28px;background:rgba(11,13,16,.88);backdrop-filter:blur(14px);position:sticky;top:0;z-index:10}
+.brand{display:flex;gap:12px;align-items:center}.mark{width:38px;height:38px;border:1px solid var(--gold);display:grid;place-items:center;color:var(--gold);font-weight:800;letter-spacing:-2px}.brand b{font-size:15px;letter-spacing:.08em}.brand span{display:block;font-size:11px;color:var(--muted);margin-top:3px}
+main{max-width:1400px;margin:auto;padding:30px 24px 60px}.hero{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:22px}.eyebrow{color:var(--gold);font-size:11px;letter-spacing:.18em;text-transform:uppercase}.hero h1{font-family:Georgia,serif;font-weight:500;font-size:38px;margin:7px 0}.hero p{color:var(--muted);max-width:680px;margin:0;line-height:1.6}.badge{border:1px solid var(--line);border-radius:999px;padding:9px 13px;color:var(--green);font-size:12px;background:#10151a}
+.grid{display:grid;grid-template-columns:430px 1fr;gap:18px}.card{background:rgba(18,22,27,.92);border:1px solid var(--line);border-radius:14px;overflow:hidden}.cardhead{padding:16px 18px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center}.cardhead b{font-size:13px}.body{padding:18px}.row{display:grid;grid-template-columns:1fr 1fr;gap:10px}label{display:block;color:#c7cdd3;font-size:11px;text-transform:uppercase;letter-spacing:.08em;margin:0 0 7px}input,select,textarea{width:100%;background:#0e1216;border:1px solid #303943;color:var(--text);border-radius:9px;padding:11px 12px;outline:none;font:inherit}textarea{min-height:105px;resize:vertical;line-height:1.5}input:focus,select:focus,textarea:focus{border-color:var(--gold)}.field{margin-bottom:13px}
+.upload{border:1px dashed #46515c;border-radius:10px;padding:17px;text-align:center;color:var(--muted);cursor:pointer;background:#0e1216}.upload strong{display:block;color:#ddd;margin-bottom:5px}.upload input{display:none}
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:8px}.check{background:#0e1216;border:1px solid #2a333c;border-radius:8px;padding:9px;font-size:12px;color:#c8cdd2}.check input{width:auto;margin-right:7px}
+button{border:0;border-radius:9px;padding:12px 15px;font-weight:700;cursor:pointer;font:inherit}.primary{background:linear-gradient(135deg,var(--gold2),var(--gold));color:#15110a;width:100%;margin-top:4px}.ghost{background:#20262d;color:#dce1e6}.toolbar{display:flex;gap:8px}.output{min-height:580px;display:flex;flex-direction:column}.outputbox{padding:20px;flex:1}.section{margin-bottom:20px}.section h3{font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--gold);margin:0 0 9px}.prompt{background:#0b0e11;border:1px solid #28313a;border-radius:10px;padding:15px;line-height:1.7;white-space:pre-wrap;color:#e9edf0;font-size:13px}.copy{float:right;margin-top:-3px;font-size:11px;padding:7px 10px}.mini{color:var(--muted);font-size:12px;line-height:1.5}.chips{display:flex;flex-wrap:wrap;gap:7px}.chip{font-size:11px;border:1px solid #303944;padding:6px 9px;border-radius:999px;color:#cbd1d6;background:#11161b}
+.footer{color:#68727c;text-align:center;font-size:11px;margin-top:18px}@media(max-width:900px){.grid{grid-template-columns:1fr}.hero{display:block}.badge{display:inline-block;margin-top:15px}.row{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<header><div class="brand"><div class="mark">A</div><div><b>AICOMPLEX</b><span>PROMPT NỘI THẤT · INTERIOR AI STUDIO</span></div></div><div class="badge">● BROWSER VERSION</div></header>
+<main>
+<section class="hero"><div><div class="eyebrow">Interior Prompt Engineering</div><h1>Biến ý tưởng thành Prompt nội thất.</h1><p>Studio trình duyệt dành cho kiến trúc sư và designer: xây dựng prompt có cấu trúc cho render, image editing và concept nội thất.</p></div></section>
+<div class="grid">
+<div class="card">
+<div class="cardhead"><b>01 · BRIEF</b><span class="mini">Không cần cài app</span></div>
+<div class="body">
+<div class="field"><label>Ảnh tham chiếu</label><label class="upload"><input id="img" type="file" accept="image/*"><strong>＋ Chọn ảnh từ máy</strong>Ảnh chỉ được xử lý trong trình duyệt ở bản này</label></div>
+<div class="field"><label>Mô tả / yêu cầu chính</label><textarea id="brief" placeholder="Ví dụ: Giữ nguyên toàn bộ kiến trúc, làm phòng khách Modern Luxury, sofa da nâu, bàn đá travertine, ánh sáng ấm..."></textarea></div>
+<div class="row">
+<div class="field"><label>Không gian</label><select id="room"><option>Phòng khách</option><option>Phòng ngủ</option><option>Phòng ăn</option><option>Showroom</option><option>Nhà hàng</option><option>Phòng làm việc</option><option>Sảnh / Lounge</option><option>Khác</option></select></div>
+<div class="field"><label>Phong cách</label><select id="style"><option>Modern Luxury</option><option>Minimal Luxury</option><option>Contemporary Luxury</option><option>Neo Classic Contemporary</option><option>Minimalist</option><option>Japandi Luxury</option><option>Art Deco</option></select></div>
+</div>
+<div class="row">
+<div class="field"><label>Camera</label><select id="camera"><option>Giữ nguyên camera gốc</option><option>35mm eye-level</option><option>24mm wide interior</option><option>50mm editorial</option></select></div>
+<div class="field"><label>Ánh sáng</label><select id="light"><option>Warm architectural lighting</option><option>Soft daylight</option><option>Golden hour</option><option>Moody luxury</option><option>Neutral showroom</option></select></div>
+</div>
+<div class="field"><label>Vật liệu chủ đạo</label><input id="materials" placeholder="Travertine, veneer walnut, leather, brushed brass..."></div>
+<div class="field"><label>AI / Output</label><select id="ai"><option>Lovart</option><option>Nano Banana</option><option>Midjourney</option><option>Flux</option><option>General Image AI</option></select></div>
+<div class="field"><label>Nguyên tắc bảo toàn</label><div class="checks">
+<label class="check"><input type="checkbox" checked id="arch"> Giữ nguyên kiến trúc</label>
+<label class="check"><input type="checkbox" checked id="furniture"> Giữ nguyên furniture</label>
+<label class="check"><input type="checkbox" checked id="cameraLock"> Khóa camera</label>
+<label class="check"><input type="checkbox" checked id="real"> Photorealistic</label>
+</div></div>
+<button class="primary" id="generate">✦ TẠO PROMPT CHUYÊN NGHIỆP</button>
+</div></div>
+<div class="card output">
+<div class="cardhead"><b>02 · PROMPT OUTPUT</b><div class="toolbar"><button class="ghost" id="reset">Reset</button><button class="ghost" id="copyAll">Copy</button></div></div>
+<div class="outputbox">
+<div class="section"><h3>Master Prompt</h3><button class="ghost copy" id="copyMaster">Copy</button><div class="prompt" id="master">Hãy nhập brief bên trái và nhấn “TẠO PROMPT CHUYÊN NGHIỆP”.</div></div>
+<div class="section"><h3>Negative Prompt</h3><button class="ghost copy" id="copyNeg">Copy</button><div class="prompt" id="negative">distorted architecture, changed wall positions, changed ceiling height, altered windows, warped furniture, duplicate objects, incorrect proportions, cartoon, CGI look, oversaturated colors, plastic materials, low detail, blurry, noise, text, watermark</div></div>
+<div class="section"><h3>Production Tags</h3><div class="chips" id="tags"><span class="chip">Photorealistic</span><span class="chip">Interior Architecture</span><span class="chip">High-end visualization</span></div></div>
+</div></div>
+</div>
+<div class="footer">AICOMPLEX Interior Prompt Studio · Browser-first concept by Hoàng Gia</div>
+</main>
+<script>
+const $=id=>document.getElementById(id);
+function build(){
+ const brief=$('brief').value.trim()||'Thiết kế một không gian nội thất cao cấp, tinh tế và có tính kiến trúc.';
+ const room=$('room').value, style=$('style').value, camera=$('camera').value, light=$('light').value, mats=$('materials').value.trim()||'natural stone, premium wood veneer, refined leather and brushed metal';
+ const ai=$('ai').value;
+ const locks=[];
+ if($('arch').checked) locks.push('preserve the existing architecture exactly: walls, openings, ceiling height, windows and doors');
+ if($('furniture').checked) locks.push('preserve the original furniture models, proportions, silhouettes and construction details');
+ if($('cameraLock').checked) locks.push('keep the original camera position, framing and perspective');
+ if($('real').checked) locks.push('photorealistic architectural visualization, physically plausible materials and lighting');
+ const master = `Create a premium ${room.toLowerCase()} interior visualization in ${style} style.\n\nBRIEF: ${brief}\n\nMATERIAL PALETTE: ${mats}.\nLIGHTING: ${light}, layered architectural lighting, realistic indirect illumination, controlled highlights and natural shadow depth.\nCAMERA: ${camera}.\n\nNON-NEGOTIABLE PRESERVATION: ${locks.join('; ')}.\n\nCOMPOSITION: refined editorial interior photography, balanced negative space, clear hierarchy, realistic scale, carefully curated decor, sophisticated material transitions and premium detailing.\n\nOUTPUT: high-end architectural visualization, realistic textures, accurate reflections, subtle imperfections, natural color grading, sharp material definition, no artificial plastic appearance. Optimize the prompt for ${ai}.`;
+ $('master').textContent=master;
+ $('tags').innerHTML=['Photorealistic',style,room,'High-end visualization',ai,'Material accuracy','Architectural photography'].map(x=>'<span class="chip">'+x+'</span>').join('');
+ return master;
+}
+$('generate').onclick=build;
+$('copyMaster').onclick=()=>navigator.clipboard.writeText($('master').textContent);
+$('copyNeg').onclick=()=>navigator.clipboard.writeText($('negative').textContent);
+$('copyAll').onclick=()=>navigator.clipboard.writeText('MASTER PROMPT\n'+$('master').textContent+'\n\nNEGATIVE PROMPT\n'+$('negative').textContent);
+$('reset').onclick=()=>{['brief','materials'].forEach(x=>$(x).value='');$('master').textContent='Hãy nhập brief bên trái và nhấn “TẠO PROMPT CHUYÊN NGHIỆP”.'};
+$('img').onchange=e=>{if(e.target.files[0]) e.target.parentElement.querySelector('strong').textContent='✓ '+e.target.files[0].name};
+</script>
+</body></html>
